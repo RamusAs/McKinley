@@ -7,6 +7,9 @@
   font-weight: normal;
   font-style: normal;
 } */
+html {
+  scroll-behavior: smooth;
+}
 
 * {
   margin: 0;
@@ -19,46 +22,65 @@ body {
   color: #002539;
   background-color: #fff;
   line-height: 1.6;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 h1 {
-  font-size: 80px;
+  font-size: 60px;
   font-weight: normal;
   letter-spacing: 7px;
   line-height: normal;
 }
 
 h2 {
-  font-size: 70px;
-  font-weight: normal;
+  font-size: 50px;
+  font-weight: 500;
   letter-spacing: 7px;
   line-height: normal;
+  margin-bottom: 30px;
 }
 h3 {
-  font-size: 50px;
-  font-weight: normal;
+  font-size: 35px;
+  font-weight: 600;
   letter-spacing: 0px;
   line-height: normal;
+  margin-bottom: 30px;
 }
 h4,
 h5 {
-  font-size: 45px;
-  font-weight: normal;
+  font-size: 30px;
+  font-weight: 500;
   letter-spacing: 0px;
   line-height: normal;
 }
 h5 {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 600;
+  margin-bottom: 20px;
 }
 p {
-  font-size: 22px;
-  font-weight: normal;
+  font-size: 18px;
+  font-weight: 450;
   letter-spacing: 0px;
   line-height: normal;
   letter-spacing: 0px;
 }
+strong {
+  font-weight: 600;
+}
+sup {
+  font-size: 20px;
+}
 
+p.bold {
+  font-weight: 600;
+}
+
+.align-text-center {
+  margin: 0 22%;
+  text-align: center;
+}
 header {
   position: fixed;
   top: 5%;
@@ -75,7 +97,8 @@ header {
 }
 
 .logo {
-  height: 90px;
+  height: 110px;
+  z-index: 10;
 }
 
 .nav-links {
@@ -85,19 +108,33 @@ header {
   justify-content: space-between;
   align-items: center;
   background-color: white;
-  padding: 15px 30px;
+  padding: 30px;
 }
 
 .nav-links li a {
   text-decoration: none;
   color: #002539;
-  font-weight: 500;
-  font-size: 26px;
+  font-size: 16px;
   text-transform: uppercase;
+}
+#burger {
+  display: none;
 }
 
 .download-icon {
   font-size: 1.2rem;
+}
+
+.scroll-down {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+
+  color: inherit;
+}
+
+.scroll-down svg {
+  font-size: 44px;
 }
 
 .hero {
@@ -116,15 +153,16 @@ header {
 .hero-text {
   margin: 0 auto;
   text-align: left;
-  font-weight: medium;
   letter-spacing: 8px;
   line-height: 1;
   text-shadow: 0px 3px 6px #00000029;
   color: #ffffff;
 }
 
-.hero h3 {
-  max-width: 50%;
+.hero-text h3,
+.hero-text h1 {
+  font-weight: 500;
+  max-width: 47%;
 }
 
 .content {
@@ -162,8 +200,10 @@ header {
     center/cover no-repeat;
 }
 
-.intro h2 {
+.intro h1 {
   margin-bottom: 2rem;
+  font-weight: 500;
+  max-width: 80%;
 }
 .half {
   width: 50%;
@@ -187,12 +227,12 @@ header {
   justify-content: center;
   gap: 50px;
   text-align: left;
-  padding: 45px;
+  padding: 100px;
 }
 
 .intro-image img {
   max-width: 100%;
-  margin-bottom: -9px;
+  margin-bottom: -8px;
 }
 
 .middle-section {
@@ -221,6 +261,16 @@ header {
   display: block;
 }
 
+.mont-McKinley {
+  position: relative;
+}
+.mont-McKinley::before {
+  content: "Le mont McKinley";
+  color: white;
+  position: absolute;
+  bottom: 40px;
+  left: 30px;
+}
 .profils {
   margin-top: 4rem;
   text-align: center;
@@ -228,7 +278,6 @@ header {
 
 .cards {
   display: flex;
-  flex-wrap: wrap;
   gap: 16px;
   justify-content: center;
 }
@@ -271,7 +320,7 @@ header {
 }
 
 .timeline-section {
-  padding: 4rem 3%;
+  padding: 4rem 0 3% 3%;
   background-color: #fff;
 }
 
@@ -285,27 +334,42 @@ header {
 .timeline-header h2 {
   padding-bottom: 0.5rem;
   margin-bottom: 2rem;
-  color: #002f47;
+  color: #002539;
+}
+.timeline-controls,
+.looks-controls {
+  position: sticky;
+  justify-content: flex-end;
+  display: flex;
+  margin-top: -60px;
+  padding-right: 3%;
+  width: 100%;
+  gap: 50px;
 }
 
-.timeline-controls button {
+.timeline-controls button,
+.looks-controls button {
   background: none;
   border: none;
   cursor: pointer;
   margin-left: 1rem;
-  color: #002f47;
+  font-weight: 500;
+  font-size: 28px;
+  color: #002539;
 }
 
 .timeline-slider {
+  position: relative;
   display: flex;
   overflow-x: auto;
   scroll-behavior: smooth;
+  padding-bottom: 100px;
   padding-top: 1rem;
 }
 
 .looks-slider::-webkit-scrollbar,
 .timeline-slider::-webkit-scrollbar {
-  height: 1px;
+  height: 2px;
 }
 
 .looks-slider::-webkit-scrollbar-track,
@@ -315,25 +379,7 @@ header {
 
 .looks-slider::-webkit-scrollbar-thumb,
 .timeline-slider::-webkit-scrollbar-thumb {
-  background-color: #002f47;
-}
-
-.progress-bar-wrapper {
-  width: 100%;
-  height: 1px;
-  background-color: #e0e0e0;
-  margin-top: -1.5rem;
-  margin-bottom: 2rem;
-  position: relative;
-  overflow: hidden;
-  border-radius: 2px;
-}
-
-.progress-bar {
-  height: 100%;
-  width: 0%;
-  background-color: #002f47;
-  transition: width 0.2s ease-out;
+  background-color: #002539;
 }
 
 .timeline-item {
@@ -371,22 +417,25 @@ header {
   gap: 2rem;
 }
 
-.quote-mark {
-  font-size: 6rem;
-  color: #002f47;
-  line-height: 1;
+.quote-content {
+  color: #002539;
+  padding: 50px;
 }
 
 .quote-content h4 {
+  color: #002539;
   font-weight: bold;
   margin-bottom: 1rem;
 }
 
-.quote-content p {
-  line-height: 1.6;
-  font-style: italic;
+.quote-content .quote-main {
+  color: #002539;
+  font-weight: 700;
+  font-size: 20px;
 }
-
+.quote-title {
+  font-weight: 500;
+}
 .tech-section {
   position: relative;
   background: url("assets/images/FW23_McKINLEY_Outdoor_NextGenHiker_29@2x.png")
@@ -399,20 +448,26 @@ header {
   padding: 3%;
 }
 
-.tech-section * {
-  max-width: 50%;
+.tech-section p {
+  max-width: 40%;
 }
-
+.tech-section h2 {
+  padding-bottom: 1em;
+  font-weight: 500;
+}
 .tech-category {
   background-color: #fff;
 }
 
 .tech-category h2 {
+  font-weight: 500;
   text-align: center;
   letter-spacing: 2px;
-  color: #002f47;
-  margin-bottom: 3rem;
-  text-transform: uppercase;
+  color: #002539;
+  padding: 100px 0;
+}
+.forty-years {
+  background-color: #f7f7f7;
 }
 
 .grid {
@@ -437,12 +492,12 @@ header {
 }
 
 .grid-text h3 {
-  color: #002f47;
+  color: #002539;
+  margin-bottom: 30px;
 }
 
 .grid-text p {
-  line-height: 1.5;
-  color: #333;
+  max-width: 90%;
 }
 
 .grid-img {
@@ -480,26 +535,31 @@ header {
 .materials-grid img {
   max-width: 300px;
 }
+.materials-grid h3 {
+  font-weight: 500;
+  margin-bottom: 30px;
+}
 
 .materials-section h2,
 .shoes-section h2 {
   text-align: center;
-  color: #002f47;
-  text-transform: uppercase;
+  color: #002539;
+  font-weight: 500;
   letter-spacing: 1px;
   margin-bottom: 3rem;
 }
 
 .shoes-grid {
   display: flex;
+  flex-wrap: wrap;
   gap: 15px;
-  justify-content: space-between;
 }
 
 .shoe-item {
   box-shadow: 6px 10px 10px #0000001a;
-  padding: 1rem;
-  text-align: center;
+  /*padding: 1rem;*/
+  flex: 1;
+  padding: 20px 40px;
 }
 
 .shoe-item img {
@@ -533,8 +593,9 @@ header {
 
 .testimonial {
   display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
-  margin-bottom: 3rem;
+  margin: auto;
 }
 
 .img-block-full {
@@ -567,13 +628,13 @@ header {
 
 .fabrication-france {
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .fabrication-france img.product-img {
   width: 100%;
   max-width: 500px;
-  margin: 1rem auto;
   display: block;
 }
 
@@ -581,15 +642,16 @@ header {
   text-align: center;
   color: #555;
 }
-
-.focus-produits {
-  margin-top: 3rem;
-  display: flex;
-  align-items: center;
+.fabrication-france ul {
+  margin-left: 15px;
+}
+.fabrication-france .text {
+  margin-top: 50px;
 }
 
 .focus-produits .product-row {
   display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
   justify-content: center;
 }
@@ -610,7 +672,7 @@ header {
 }
 
 .top-products-header h3 {
-  color: #002f47;
+  color: #002539;
   text-align: left;
   margin-bottom: 2rem;
   max-width: 400px;
@@ -639,7 +701,7 @@ header {
 
 .product-card p {
   font-weight: 600;
-  color: #002f47;
+  color: #002539;
   margin: 15px 0;
 }
 
@@ -656,7 +718,7 @@ header {
 }
 
 .quote-mark {
-  color: #002f47;
+  color: #002539;
   line-height: 1;
 }
 
@@ -669,15 +731,8 @@ header {
   margin-bottom: 1rem;
 }
 
-.quote-main {
-  font-weight: bold;
-  font-style: italic;
-  color: #111;
-}
-
 .looks-section {
-  background: #fff;
-  padding: 4rem 2rem;
+  padding: 4rem 0 4em 3%;
 }
 
 .looks-header {
@@ -688,10 +743,9 @@ header {
 }
 
 .looks-header h2 {
-  color: #002f47;
-  font-weight: normal;
-  font-size: 70px;
-  letter-spacing: 7px;
+  color: #002539;
+  font-weight: 500;
+  font-size: 50px;
   color: #002539;
   padding-bottom: 0.5rem;
   margin-bottom: 2rem;
@@ -701,7 +755,7 @@ header {
   background: none;
   border: none;
   cursor: pointer;
-  color: #002f47;
+  color: #002539;
   margin-left: 1rem;
 }
 
@@ -709,23 +763,32 @@ header {
   display: flex;
   overflow-x: auto;
   scroll-behavior: smooth;
-  gap: 2rem;
+  gap: 15px;
   padding-top: 1rem;
+  padding-bottom: 100px;
 }
 
 .look-card {
-  flex: 0 0 220px;
-  text-align: center;
+  flex: 1;
+  box-shadow: 0px 3px 6px #00000029;
+  padding: 10px 3%;
+}
+
+.look-card:last-of-type {
+  margin-right: 3%;
+}
+.look-card:first-of-type {
+  margin-left: 3px;
 }
 
 .look-card img {
-  width: 100%;
+  max-width: 310px;
   height: auto;
   margin-bottom: 1rem;
 }
 
 .look-card h3 {
-  color: #002f47;
+  color: #002539;
   margin-bottom: 0.5rem;
 }
 
@@ -736,7 +799,7 @@ header {
 /* Footer */
 
 .site-footer {
-  background-color: #002f47;
+  background-color: #002539;
   color: white;
   padding: 3rem 2rem;
 }
@@ -744,23 +807,31 @@ header {
 .footer-columns {
   display: flex;
   flex-wrap: wrap;
-  gap: 3rem;
-  justify-content: space-between;
+  gap: 18px;
 }
 
 .footer-contact,
 .footer-links,
 .footer-legal {
   flex: 1 1 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.footer-legal {
+  flex: 1 1 33%;
 }
 
 .footer-links a {
   color: white;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
-.footer-legal p {
+.footer-legal p,
+.footer-contact p {
   line-height: 1.5;
+  font-weight: normal;
+  font-size: 14px;
 }
 
 .footer-contact a {
@@ -771,4 +842,198 @@ header {
 
 .tracé {
   transform: rotate(180deg);
+  height: 130px;
+}
+
+.mobile {
+  display: none;
+}
+
+@media (max-width: 500px) {
+  body:has(.nav-links.active) {
+    overflow: hidden;
+  }
+  .mobile {
+    display: block;
+  }
+  #burger {
+    all: unset;
+    display: block;
+    color: white;
+    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.4));
+    font-size: 45px;
+    z-index: 10;
+  }
+  h1 {
+    font-size: 30px;
+  }
+
+  h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+  }
+  h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+  h4,
+  h5 {
+    font-size: 15px;
+  }
+  h5 {
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  p {
+    font-size: 16px;
+    font-weight: 500;
+  }
+  strong {
+    font-weight: 600;
+  }
+  sup {
+    font-size: 20px;
+  }
+  .half {
+    width: 100%;
+  }
+  .grid,
+  .products-grid,
+  .materials-grid {
+    display: block;
+  }
+  header {
+    top: 1%;
+    width: 100%;
+    padding: 0 3%;
+    z-index: 1000;
+  }
+  .logo {
+    height: 55px;
+  }
+
+  .nav-links,
+  .scroll-down,
+  .looks-controls,
+  .timeline-controls {
+    display: none;
+  }
+  .nav-links.active {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    padding: 30% 0;
+    font-weight: bold;
+    background: url("assets/images/Still_McKINLEY_OutdoorEveryday_FW24_19@2x.png");
+    background-size: cover;
+  }
+  .nav-links li a {
+    color: white;
+  }
+  .nav-links li {
+    color: white;
+    text-align: center;
+  }
+
+  .nav-links.active + #burger .open,
+  .nav-links:not(.active) + #burger .close {
+    display: none;
+  }
+
+  .hero {
+    padding: 7rem 5%;
+  }
+
+  .hero-text {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .hero-text h3,
+  .hero-text h1,
+  .content p,
+  .tech-section p,
+  .intro-content,
+  .text-block {
+    max-width: 100%;
+    width: 100%;
+  }
+  .content {
+    display: block;
+    padding: 2rem;
+  }
+
+  .intro-text {
+    padding: 50px;
+  }
+  .tech-category h2 {
+    padding: 40px 0;
+  }
+
+  .middle-text > * {
+    width: 100%;
+  }
+
+  .middle-text p {
+    max-width: 100%;
+    padding: 3%;
+  }
+
+  .escape-section {
+    margin: 2rem 0;
+  }
+  .align-text-center {
+    margin: 0;
+  }
+  .fabrication-france .text {
+    margin-top: 0px;
+  }
+  .cards {
+    overflow-x: auto;
+    justify-content: unset;
+  }
+  .card img {
+    width: 240px;
+    margin-bottom: 1rem;
+  }
+  .text-block {
+    display: flex;
+    padding: 30% 5%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .focus-produits .product-row {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .focus-produits .product-row img:first-of-type {
+    height: 100px;
+  }
+
+  .tech-section p {
+    font-weight: 600;
+  }
+  .products-grid .product-card:not(:last-of-type) {
+    margin-bottom: 15px;
+  }
+  .quote-content {
+    padding: 0;
+  }
+
+  .timeline-slider,
+  .looks-slider {
+    padding-bottom: 0;
+  }
+  .looks-slider::-webkit-scrollbar,
+  .timeline-slider::-webkit-scrollbar {
+    height: 0;
+  }
 }
