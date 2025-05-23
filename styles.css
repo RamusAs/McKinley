@@ -230,9 +230,8 @@ header {
   padding: 100px;
 }
 
-.intro-image img {
+.intro-image {
   max-width: 100%;
-  margin-bottom: -7.5px;
 }
 
 .middle-section {
