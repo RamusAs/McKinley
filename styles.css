@@ -1051,4 +1051,11 @@ header {
   .concept-section {
     background-position: -200svw 0;
   }
+  @supports (-webkit-touch-callout: none) {
+  .background-parallax {
+    background-attachment: scroll;
+  }
 }
+
+}
+
