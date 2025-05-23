@@ -1049,7 +1049,6 @@ header {
     height: 0;
   }
   .concept-section {
-    background-position: -200dvw 0;
-    background-attachment: fixed;
+    background-position: -200svw 0;
   }
 }
