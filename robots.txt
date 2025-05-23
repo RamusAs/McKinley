@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.https://bcwpressrelease.fr/40ans-mckinley/sitemap.xml

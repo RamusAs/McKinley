@@ -653,11 +653,17 @@ header {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
-  justify-content: center;
+  justify-content: space-between;
+}
+.focus-produits .product-row div {
+  display: grid;
+}
+.focus-produits .product-row span {
+  margin-left: 50px;
 }
 
 .focus-produits .product-row img {
-  max-width: 250px;
+  max-height: 250px;
 }
 
 .product-row .row {
@@ -1014,10 +1020,16 @@ header {
     align-items: center;
     gap: 0;
   }
-  .focus-produits .product-row img:first-of-type {
-    height: 100px;
+  .focus-produits .product-row img {
+    max-height: unset;
+    width: 100%;
   }
-
+  .focus-produits .product-row span {
+    margin: 0;
+  }
+  .focus-produits .product-row .badge {
+    width: 25%;
+  }
   .tech-section p {
     font-weight: 600;
   }
