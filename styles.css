@@ -410,16 +410,10 @@ header {
   justify-content: center;
 }
 
-.testimonial {
-  display: flex;
-  max-width: 1000px;
-  align-items: flex-start;
-  gap: 2rem;
-}
-
 .quote-content {
   color: #002539;
   padding: 50px;
+  width: 70%;
 }
 
 .quote-content h4 {
@@ -434,7 +428,7 @@ header {
   font-size: 20px;
 }
 .quote-title {
-  font-weight: 500;
+  font-weight: 400;
 }
 .tech-section {
   position: relative;
@@ -570,11 +564,11 @@ header {
 .shoe-highlight {
   position: relative;
   margin-top: 2rem;
+  display: flex;
 }
 
-.shoe-highlight img {
-  width: 100%;
-  border-radius: 6px;
+.shoe-highlight video {
+  margin: auto;
 }
 
 .overlay-logo {
@@ -593,8 +587,8 @@ header {
 
 .testimonial {
   display: flex;
-  flex-wrap: wrap;
   gap: 2rem;
+  max-width: 85%;
   margin: auto;
 }
 
@@ -722,7 +716,6 @@ header {
 .expert-testimonial .testimonial {
   display: flex;
   gap: 2rem;
-  max-width: 1000px;
   margin: 0 auto;
 }
 
@@ -1041,6 +1034,9 @@ header {
   }
   .quote-content {
     padding: 0;
+  }
+  .testimonial {
+    flex-wrap: wrap;
   }
 
   .timeline-slider,
