@@ -199,7 +199,9 @@ header {
   background: url("assets/images/Still_McKINLEY_Outdoor_SS25_050@2x.png")
     center/cover no-repeat;
 }
-
+.intro {
+  overflow: auto;
+}
 
 .intro h1 {
   margin-bottom: 2rem;
