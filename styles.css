@@ -645,6 +645,9 @@ header {
 .fabrication-france ul {
   margin-left: 15px;
 }
+.fabrication-france ul li {
+  margin: 10px 0;
+}
 .fabrication-france .text {
   margin-top: 50px;
 }
