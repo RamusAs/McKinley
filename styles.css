@@ -199,6 +199,9 @@ header {
   background: url("assets/images/Still_McKINLEY_Outdoor_SS25_050@2x.png")
     center/cover no-repeat;
 }
+.intro {
+  overflow: hidden;
+}
 
 .intro h1 {
   margin-bottom: 2rem;
@@ -1034,9 +1037,11 @@ header {
   }
   .quote-content {
     padding: 0;
+    width: 100%;
   }
   .testimonial {
     flex-wrap: wrap;
+    max-width: 100%;
   }
 
   .timeline-slider,
@@ -1046,5 +1051,8 @@ header {
   .looks-slider::-webkit-scrollbar,
   .timeline-slider::-webkit-scrollbar {
     height: 0;
+  }
+  .concept-section {
+    background-position: -900px 0;
   }
 }
